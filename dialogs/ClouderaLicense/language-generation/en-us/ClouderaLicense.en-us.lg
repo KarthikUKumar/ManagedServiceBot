@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_61fmZg_text()
+- Do you need an assessment report of the environment?
+# ConfirmInput_Prompt_61fmZg()
+[Activity
+    Text = ${ConfirmInput_Prompt_61fmZg_text()}
+]
+
+# SendActivity_DMu5nY()
+[Activity
+    Text = ${SendActivity_DMu5nY_text()}
+]
+
+# SendActivity_DMu5nY_text()
+- It expires on 31st December.
+# ChoiceInput_Prompt_cxXsTU_text()
+- Select your environment
+# ChoiceInput_Prompt_cxXsTU()
+[Activity
+    Text = ${ChoiceInput_Prompt_cxXsTU_text()}
+]
+
+# SendActivity_ssSLsf_text()
+- ```Attaching the assessment report that will help on upgrade planning
+Generating the ${user.otherenv} report.```
+# SendActivity_ssSLsf()
+[Activity
+    Text = ${SendActivity_ssSLsf_text()}
+]

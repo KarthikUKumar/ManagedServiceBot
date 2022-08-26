@@ -1,0 +1,37 @@
+{
+  "CoreAssistant_Bot_Hackathon.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "BotTour": [
+        "BotTourDialog.en-us"
+      ],
+      "Cancel": [
+        "CancelDialog.en-us"
+      ],
+      "Feedback": [
+        "FeedbackDialog.en-us"
+      ],
+      "Help": [
+        "HelpDialog.en-us"
+      ],
+      "": [
+        "ChitchatDialog.en-us"
+      ],
+      "PasswordReset": [
+        "PasswordReset.en-us"
+      ],
+      "IssuewithEnvironment": [
+        "EnvironmentIssue.en-us"
+      ],
+      "OtherQuery": [
+        "OtherQuery.en-us"
+      ],
+      "ClouderaSupport": [
+        "CloudreaSupport.en-us"
+      ],
+      "ClouderaLicense": [
+        "ClouderaLicense.en-us"
+      ]
+    }
+  }
+}

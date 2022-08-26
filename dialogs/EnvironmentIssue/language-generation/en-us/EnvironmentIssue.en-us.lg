@@ -1,0 +1,203 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_aLVozZ_text()
+- Select your environment in which you are facing an issue
+# ChoiceInput_Prompt_aLVozZ()
+[Activity
+    Text = ${ChoiceInput_Prompt_aLVozZ_text()}
+]
+
+# ChoiceInput_Prompt_ZXwfEl_text()
+- Select your platform 
+# ChoiceInput_Prompt_ZXwfEl()
+[Activity
+    Text = ${ChoiceInput_Prompt_ZXwfEl_text()}
+]
+
+# ChoiceInput_Prompt_4BWjK4_text()
+- Select the service you have issue with
+# ChoiceInput_Prompt_4BWjK4()
+[Activity
+    Text = ${ChoiceInput_Prompt_4BWjK4_text()}
+]
+
+# ChoiceInput_Prompt_V3AZ8l_text()
+- Select the problem with ${user.issser}-
+# ChoiceInput_Prompt_V3AZ8l()
+[Activity
+    Text = ${ChoiceInput_Prompt_V3AZ8l_text()}
+]
+
+# SendActivity_PmR3wI_text()
+- Let me check on HDFS
+# SendActivity_PmR3wI_attachment_zFXvsU()
+[HeroCard
+  title = HDFS Report
+  subtitle = -------------------------------
+  text = I can access those files...
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_PmR3wI()
+[Activity
+    Text = ${SendActivity_PmR3wI_text()}
+    Attachments = ${SendActivity_PmR3wI_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# SendActivity_v8eNqk_text()
+- Let me check the node
+# SendActivity_v8eNqk_attachment_zFXvsU()
+[HeroCard
+  title = Namenode Report
+  subtitle = -------------------------------
+  text = Node is fine and health is green.
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_v8eNqk()
+[Activity
+    Text = ${SendActivity_v8eNqk_text()}
+    Attachments = ${SendActivity_v8eNqk_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# ChoiceInput_Prompt_ImUrDz_text()
+- Select the problem with ${user.issser}-
+# ChoiceInput_Prompt_ImUrDz()
+[Activity
+    Text = ${ChoiceInput_Prompt_ImUrDz_text()}
+]
+
+# SendActivity_ZPzBTd_text()
+- Let me check on Spark
+# SendActivity_ZPzBTd_attachment_zFXvsU()
+[HeroCard
+  title = HDFS Report
+  subtitle = -------------------------------
+  text = I can access those files...
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_ZPzBTd()
+[Activity
+    Text = ${SendActivity_ZPzBTd_text()}
+    Attachments = ${SendActivity_ZPzBTd_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# SendActivity_hQ8F6c_text()
+- Let me check ...
+# SendActivity_hQ8F6c_attachment_zFXvsU()
+[HeroCard
+  title = Namenode Report
+  subtitle = -------------------------------
+  text = Node is fine and health is green.
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_hQ8F6c()
+[Activity
+    Text = ${SendActivity_hQ8F6c_text()}
+    Attachments = ${SendActivity_hQ8F6c_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# ChoiceInput_Prompt_KQSP0F_text()
+- Select the problem with ${user.issser}-
+# ChoiceInput_Prompt_KQSP0F()
+[Activity
+    Text = ${ChoiceInput_Prompt_KQSP0F_text()}
+]
+
+# SendActivity_9etT9T_text()
+- Let me check on Hive...
+# SendActivity_9etT9T_attachment_zFXvsU()
+[HeroCard
+  title = HDFS Report
+  subtitle = -------------------------------
+  text = I can access those files...
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_9etT9T()
+[Activity
+    Text = ${SendActivity_9etT9T_text()}
+    Attachments = ${SendActivity_9etT9T_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# SendActivity_S8A963_text()
+- Let me check ...
+# SendActivity_S8A963_attachment_zFXvsU()
+[HeroCard
+  title = Namenode Report
+  subtitle = -------------------------------
+  text = Node is fine and health is green.
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_S8A963()
+[Activity
+    Text = ${SendActivity_S8A963_text()}
+    Attachments = ${SendActivity_S8A963_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# ChoiceInput_Prompt_s4o3Rt_text()
+- Select the problem with ${user.issser}-
+# ChoiceInput_Prompt_s4o3Rt()
+[Activity
+    Text = ${ChoiceInput_Prompt_s4o3Rt_text()}
+]
+
+# SendActivity_YZwhnv_text()
+- ```Let me check on Hue.
+ https://google.co.in```
+# SendActivity_YZwhnv_attachment_zFXvsU()
+[HeroCard
+  title = Hue Report
+  subtitle = -------------------------------
+  text = I can login access these files...
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+]
+
+# SendActivity_YZwhnv()
+[Activity
+    Text = ${SendActivity_YZwhnv_text()}
+    Attachments = ${SendActivity_YZwhnv_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+    InputHint = expectingInput
+]
+
+# SendActivity_Y2VJUv_text()
+- Let me check...
+# SendActivity_Y2VJUv_attachment_zFXvsU()
+[HeroCard
+  title = Namenode Report
+  subtitle = -------------------------------
+  text = Node is fine and health is green.
+  images = https://blobreport.blob.core.windows.net/hadoop/hadoop_assessment_report_2022-08-11_09-34-13.pdf
+  buttons = Want Suggetions
+]
+
+# SendActivity_Y2VJUv()
+[Activity
+    Text = ${SendActivity_Y2VJUv_text()}
+    Attachments = ${SendActivity_Y2VJUv_attachment_zFXvsU()}
+    AttachmentLayout = carousel
+]
+
+# SendActivity_yK8O4N()
+[Activity
+    Text = ${SendActivity_yK8O4N_text()}
+]
+
+# SendActivity_yK8O4N_text()
+- Type "help" to select an option or "E" to Exit.

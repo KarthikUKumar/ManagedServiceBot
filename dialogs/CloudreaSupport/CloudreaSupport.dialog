@@ -1,0 +1,109 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "nwTNjo",
+    "name": "CloudreaSupport",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "qVWVRf"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "6azxK2"
+          },
+          "activity": "${SendActivity_6azxK2()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "8n6a89"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals( user.othersup, 'blank')",
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_8n6a89()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "user.othersup",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Zy7AST"
+          },
+          "condition": "=user.othersup",
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "wODeSW"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_wODeSW()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true
+              },
+              "property": "user.otherenv",
+              "choices": [
+                "DEV",
+                "UAT",
+                "PROD"
+              ],
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "iXHwIl"
+              },
+              "activity": "${SendActivity_iXHwIl()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "zjvHb1"
+          },
+          "assignments": [
+            {
+              "property": "user.othersup",
+              "value": "'blank'"
+            },
+            {
+              "property": "user.otherenv",
+              "value": "'blank'"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "CloudreaSupport.lg",
+  "recognizer": "CloudreaSupport.lu.qna",
+  "id": "CloudreaSupport"
+}

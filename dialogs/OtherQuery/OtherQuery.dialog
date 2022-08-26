@@ -1,0 +1,115 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "VoMoXl",
+    "name": "OtherQuery",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "z3m4kL"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "5s3ZJq"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals( user.otherreq, 'blank')",
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_5s3ZJq()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "user.otherreq",
+          "choices": [
+            "When is the Cloudera license about to expire ?",
+            "When is the support expiring for CDH ?"
+          ],
+          "style": "heroCard",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "pMZnzx"
+          },
+          "condition": "=user.otherreq",
+          "cases": [
+            {
+              "value": "When is the support expiring for CDH ?",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "RKlG29"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "CloudreaSupport"
+                }
+              ]
+            },
+            {
+              "value": "When is the Cloudera license about to expire ?",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "7Kqe2d"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ClouderaLicense"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "gBmwru"
+              },
+              "activityProcessed": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "CJgVpG"
+          },
+          "assignments": [
+            {
+              "property": "user.otherreq",
+              "value": "'blank'"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8QKGM4"
+          },
+          "activity": "${SendActivity_8QKGM4()}"
+        }
+      ]
+    }
+  ],
+  "generator": "OtherQuery.lg",
+  "recognizer": "OtherQuery.lu.qna",
+  "id": "OtherQuery"
+}

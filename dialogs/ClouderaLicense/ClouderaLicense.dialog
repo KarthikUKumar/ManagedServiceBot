@@ -1,0 +1,110 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "sggxf8",
+    "name": "ClouderaLicense",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "jaRX75"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "DMu5nY"
+          },
+          "activity": "${SendActivity_DMu5nY()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "61fmZg"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals( user.othersup, 'blank')",
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_61fmZg()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "property": "user.othersup",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "mXSHkB"
+          },
+          "condition": "=user.othersup",
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "cxXsTU"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_cxXsTU()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true
+              },
+              "property": "user.otherenv",
+              "choices": [
+                "DEV",
+                "UAT",
+                "PROD"
+              ],
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ssSLsf"
+              },
+              "activity": "${SendActivity_ssSLsf()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "Jp41rp"
+          },
+          "assignments": [
+            {
+              "property": "user.othersup",
+              "value": "'blank'"
+            },
+            {
+              "property": "user.otherenv",
+              "value": "'blank'"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "ClouderaLicense.lg",
+  "recognizer": "ClouderaLicense.lu.qna",
+  "id": "ClouderaLicense"
+}

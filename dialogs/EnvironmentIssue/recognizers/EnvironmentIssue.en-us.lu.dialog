@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_EnvironmentIssue",
+  "applicationId": "=settings.luis.EnvironmentIssue_en_us_lu.appId",
+  "version": "=settings.luis.EnvironmentIssue_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

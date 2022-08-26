@@ -1,0 +1,163 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3yk4OT",
+    "name": "HelpDialog",
+    "description": "Displays help information about the bot"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "qXCGer"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "woy06N"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals(user.style,'blank')",
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_woy06N()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.style",
+          "choices": [
+            "Need a Password Reset",
+            "Issue with the Environment",
+            "Other query"
+          ],
+          "style": "heroCard",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "xkwJcg"
+          },
+          "condition": "user.style",
+          "cases": [
+            {
+              "value": "Need a Password Reset",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "nBeWon"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.style",
+                      "value": "'blank'"
+                    },
+                    {
+                      "property": "user.selection",
+                      "value": "'resetpwd'"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "ebkdDh"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "PasswordReset"
+                }
+              ]
+            },
+            {
+              "value": "Issue with the Environment",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "mVSVpy"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.style",
+                      "value": "'blank'"
+                    },
+                    {
+                      "property": "user.selection",
+                      "value": "'issue'"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "pjqe4l"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "EnvironmentIssue"
+                }
+              ]
+            },
+            {
+              "value": "Other query",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "AoNkNS"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.style",
+                      "value": "'blank'"
+                    },
+                    {
+                      "property": "user.selection",
+                      "value": "'other'"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "V6UOcb"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "OtherQuery"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "K3ePMl"
+              },
+              "activityProcessed": true,
+              "allowLoop": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "HelpDialog.lg",
+  "recognizer": "HelpDialog.lu.qna",
+  "id": "HelpDialog",
+  "$Imported": "a1be0cb91341b11b8cd09b0301040284"
+}

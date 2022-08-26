@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_5s3ZJq()
+[Activity
+    Text = ${ChoiceInput_Prompt_5s3ZJq_text()}
+]
+
+# ChoiceInput_Prompt_5s3ZJq_text()
+- Ask a thing?
+# SendActivity_8QKGM4()
+[Activity
+    Text = ${SendActivity_8QKGM4_text()}
+]
+
+# SendActivity_8QKGM4_text()
+- Type "help" to select an option or "E" to Exit.

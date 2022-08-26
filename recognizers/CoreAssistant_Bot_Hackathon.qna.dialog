@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "QnA_CoreAssistant_Bot_Hackathon",
+  "recognizers": {
+    "en-us": "CoreAssistant_Bot_Hackathon.en-us.qna",
+    "": "CoreAssistant_Bot_Hackathon.en-us.qna"
+  }
+}

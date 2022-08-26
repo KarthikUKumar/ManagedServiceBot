@@ -1,0 +1,32 @@
+[import](common.lg)
+
+# SendActivity_6azxK2()
+[Activity
+    Text = ${SendActivity_6azxK2_text()}
+]
+
+# SendActivity_6azxK2_text()
+- ```Support expires on July 31st.
+Plan an upgrade before that.```
+# ConfirmInput_Prompt_8n6a89()
+[Activity
+    Text = ${ConfirmInput_Prompt_8n6a89_text()}
+]
+
+# ConfirmInput_Prompt_8n6a89_text()
+- Do you need an assessment report of the environment?
+# ChoiceInput_Prompt_wODeSW()
+[Activity
+    Text = ${ChoiceInput_Prompt_wODeSW_text()}
+]
+
+# ChoiceInput_Prompt_wODeSW_text()
+- Select your environment
+# SendActivity_iXHwIl()
+[Activity
+    Text = ${SendActivity_iXHwIl_text()}
+]
+
+# SendActivity_iXHwIl_text()
+- ```Attaching the assessment report that will help on upgrade planning
+Generating the ${user.otherenv} report.```

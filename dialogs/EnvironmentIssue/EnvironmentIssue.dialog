@@ -1,0 +1,407 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "SRnD2e",
+    "name": "EnvironmentIssue",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Y7DVSX"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "aLVozZ"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals(user.issenv,'blank')",
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_aLVozZ()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "property": "user.issenv",
+          "choices": [
+            "DEV",
+            "UAT",
+            "PROD"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ZXwfEl"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals(user.isspltfrm,'blank')",
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_ZXwfEl()}",
+          "unrecognizedPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.isspltfrm",
+          "choices": [
+            "Hadoop",
+            "Synapse",
+            "SQL Server"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "4BWjK4"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": "=equals( user.issser, 'blank')",
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_4BWjK4()}",
+          "unrecognizedPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "user.issser",
+          "style": "heroCard",
+          "choices": [
+            "HDFS",
+            "SPARK",
+            "HIVE",
+            "HUE"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "hq31VD"
+          },
+          "condition": "user.issser",
+          "cases": [
+            {
+              "value": "HDFS",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "V3AZ8l"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": "=equals( user.isshdfs, 'blank')",
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_V3AZ8l()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or "
+                  },
+                  "property": "user.isshdfs",
+                  "style": "heroCard",
+                  "choices": [
+                    "Files are not accessible",
+                    "Namenode Health"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "ionmAP"
+                  },
+                  "condition": "user.isshdfs",
+                  "cases": [
+                    {
+                      "value": "Files are not accessible",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "PmR3wI"
+                          },
+                          "activity": "${SendActivity_PmR3wI()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Namenode Health",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "v8eNqk"
+                          },
+                          "activity": "${SendActivity_v8eNqk()}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "SPARK",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "ImUrDz"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": "=equals( user.issspark, 'blank')",
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_ImUrDz()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.issspark",
+                  "style": "heroCard",
+                  "choices": [
+                    "Cannot run job",
+                    "Taking longer time"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "mUfkSC"
+                  },
+                  "condition": "user.issspark",
+                  "cases": [
+                    {
+                      "value": "Cannot run the job",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "ZPzBTd"
+                          },
+                          "activity": "${SendActivity_ZPzBTd()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Taking longer time",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "hQ8F6c"
+                          },
+                          "activity": "${SendActivity_hQ8F6c()}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "HIVE",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "KQSP0F"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": "=equals( user.isshive, 'blank')",
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_KQSP0F()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.isshive",
+                  "style": "heroCard",
+                  "choices": [
+                    "Not able to connect",
+                    "Able to login but not able to run hive query"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "VHHjGP"
+                  },
+                  "condition": "user.isshive",
+                  "cases": [
+                    {
+                      "value": "Not able to connect",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "9etT9T"
+                          },
+                          "activity": "${SendActivity_9etT9T()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Able to login but not able to run hive query",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "S8A963"
+                          },
+                          "activity": "${SendActivity_S8A963()}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "HUE",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "s4o3Rt"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": "=equals( user.isshue, 'blank')",
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_s4o3Rt()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.isshue",
+                  "style": "heroCard",
+                  "choices": [
+                    "Not able to login",
+                    "Able to login but not able to run hue query"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "iDQqFW"
+                  },
+                  "condition": "user.isshue",
+                  "cases": [
+                    {
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "YZwhnv"
+                          },
+                          "activity": "${SendActivity_YZwhnv()}"
+                        }
+                      ],
+                      "value": "Not able to login"
+                    },
+                    {
+                      "value": "Able to login but not able to run hue query",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "Y2VJUv"
+                          },
+                          "activity": "${SendActivity_Y2VJUv()}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.CancelDialog",
+              "$designer": {
+                "id": "NX2U72"
+              },
+              "activityProcessed": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "yK8O4N"
+          },
+          "activity": "${SendActivity_yK8O4N()}"
+        }
+      ]
+    }
+  ],
+  "generator": "EnvironmentIssue.lg",
+  "recognizer": "EnvironmentIssue.lu.qna",
+  "id": "EnvironmentIssue"
+}
